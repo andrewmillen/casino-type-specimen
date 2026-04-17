@@ -1,0 +1,478 @@
+@font-face {
+    font-family: 'casinoregular';
+    src: url('../font/casino-webfont.woff2') format('woff2'),
+         url('../font/casino-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.6;
+    font-family: 'casinoregular', sans-serif;
+}
+
+[contenteditable="true"]:focus {
+  outline: none;
+}
+
+/* =========================== */
+/* Header */
+/* =========================== */
+
+header {
+  background: #B63426;
+  text-align: center;
+  height: 100vh;
+  max-height: 60vw;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+header img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 75%;
+  opacity: 0.5;
+}
+
+h1 {
+  color: #FFCE53;
+  position: relative;
+  top: 50%;
+  transform: translateY(-80%);
+  font-size: 130px;
+  font-weight: normal;
+  letter-spacing: 4px;
+}
+
+.slider {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+}
+
+.label {
+  font-family: 'montserrat';
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 35px;
+}
+
+.label-small { left: -20px; }
+.label-big { right: -10px; }
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 36px;
+  width: 36px;
+  border-radius: 100%;
+  background: #FECD5E;
+  border: 5px dashed #C5452B;
+  box-shadow: inset 0 0 0 1px #FECD5E, inset 0 0 0 3px #C5452B, 0 2px 0 #A12621, 0 2px 5px 2px #A62A24;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  height: 36px;
+  width: 36px;
+  border-radius: 100%;
+  background: #FECD5E;
+  border: 5px dashed #C5452B;
+  box-shadow: inset 0 0 0 1px #FECD5E, inset 0 0 0 3px #C5452B, 0 2px 0 #A12621, 0 2px 5px 2px #A62A24;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  height: 36px;
+  width: 36px;
+  border-radius: 100%;
+  background: #FECD5E;
+  border: 5px dashed #C5452B;
+  box-shadow: inset 0 0 0 1px #FECD5E, inset 0 0 0 3px #C5452B, 0 2px 0 #A12621, 0 2px 5px 2px #A62A24;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: #A3241B;
+  border-radius: 100px;
+  border-bottom: 1px solid #C5452B;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: #A3241B;
+  border-radius: 100px;
+  border-bottom: 1px solid #C5452B;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #A3241B;
+  border-bottom: 1px solid #C5452B;
+  border-radius: 100px;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ffffff;
+  border-bottom: 1px solid #C5452B;
+  border-radius: 2.6px;
+}
+
+/* =========================== */
+/* Download Button */
+/* =========================== */
+
+.download {
+  background: #1F1F21;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  padding: 1em 1.5em;
+  color: #ffffff;
+  font-family: 'Montserrat';
+  position: fixed;
+  top: 1rem;
+  right: -20rem;
+  text-decoration: none;
+  z-index: 999;
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.3,.64,.48,1.2);
+}
+
+@keyframes slideIn {
+  0% { right: -20rem; }
+  100% { right: 1rem; }
+}
+
+.download i {
+  font-size: 14px;
+  padding-left: 4px;
+}
+
+.download span {
+    color: #8AB2F1;
+    font-size: 10px;
+    background: #28354C;
+    border-radius: 2px;
+    padding: 0.5em;
+    position: relative;
+    top: -3px;
+    margin-left: 1rem;
+}
+
+/* =========================== */
+/* Alphabet */
+/* =========================== */
+
+.section--characters {
+  background: #FFCE53;
+  text-align: center;
+  color: #B63426;
+  padding: 6vw 10vw;
+  font-size: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .section--characters {
+    font-size: 60px;
+  }
+}
+
+/* =========================== */
+/* Word List */
+/* =========================== */
+
+.words {
+    background: #1F1F22;
+    color: #F0F0EF;
+    padding: 10vw;
+    text-align: center;
+}
+
+.word {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.word:last-child {
+  margin-bottom: 0;
+}
+
+span.word-1 { font-size: 40px; }
+span.word-2 { font-size: 54px; }
+span.word-3 { font-size: 30px; }
+span.word-4 { font-size: 45px; }
+
+.amp {
+  background: #F0F0EF;
+  color: #C2C2C2;
+  text-align: center;
+}
+
+span.ampersand {
+  font-size: 300px;
+}
+
+@media screen and (min-width: 768px) {
+
+  .section--words {
+    height: 600px;
+    position: relative;
+  }
+  .words, .amp {
+    height: 100%;
+    width: 50%;
+    float: left;
+    position: relative;
+    text-align: center;
+    padding: 5vw;
+  }
+
+  .words__wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  span.word-1 { font-size: 60px; }
+  span.word-2 { font-size: 80px; }
+  span.word-3 { font-size: 47px; }
+  span.word-4 { font-size: 70px; }
+
+  span.ampersand {
+    font-size: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+/* =========================== */
+/* Emoticon / Special Chars */
+/* =========================== */
+
+.section--emoticon {
+  background: #0C352F;
+  padding: 15vw;
+  text-align: center;
+  color: white;
+}
+
+.emoticon {
+  width: 100%;
+  max-width: 1000px;
+  font-size: 40px;
+  margin: 0 auto;
+  transition: all .3s;
+}
+
+@media screen and (min-width: 768px) {
+  .emoticon {
+    font-size: 100px;
+  }
+}
+
+.bubble {
+  background: #22786C;
+  position: relative;
+  border-radius: 10px;
+  padding: 1.4rem;
+  font-size: 20px;
+  margin-left: 10px;
+  top: -10px;
+  display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+  .bubble {
+    font-size: 60px;
+  }
+}
+
+.bubble:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #22786C;
+}
+
+.bubble:focus {
+  background: #22786C;
+}
+
+/* =========================== */
+/* Numerals */
+/* =========================== */
+
+.equation, .numerals {
+  padding: 10vw;
+}
+
+.equation {
+  background: #FECD5E;
+  color: #B4362C;
+  font-size: 40px;
+  text-align: right;
+}
+
+.equation__wrapper {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.numerals {
+  background: #B4362C;
+  color: #FECD5E;
+  text-align: center;
+  padding: 20vw;
+  font-size: 60px;
+}
+
+.equation input {
+  background: none;
+  border: none;
+  display: inline;
+  margin-bottom: 1rem;
+  text-align: right;
+  padding: 0 1rem;
+  font-size: 40px;
+  width: 100%;
+  max-width: 250px;
+  font-family: 'casinoregular';
+  color: #B4362C;
+  outline: none;
+}
+
+.equation #solution {
+  border-top: 3px solid #B4362C;
+  padding: 1rem;
+}
+
+.plus {
+  position: relative;
+}
+
+.plus:before {
+  content: '+';
+  position: absolute;
+}
+
+
+@media screen and (min-width: 768px) {
+  .section--numerals {
+    height: 600px;
+  }
+  .equation, .numerals {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 10vw;
+  }
+  .numerals {
+    font-size: 80px;
+  }
+  .equation {
+    font-size: 70px;
+  }
+  .equation input {
+    font-size: 70px;
+  }
+}
+
+/* =========================== */
+/* Paragraph / Quote */
+/* =========================== */
+
+.section--quote {
+      background: #1F1F22;
+      color: #F0F0EF;
+      padding: 10vw;
+      font-size: 50px;
+}
+
+.quote {
+  /*margin-bottom: 0;*/
+}
+
+.cite {
+  font-family: 'montserrat';
+  color: #FDCC67;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: right;
+  display: block;
+}

@@ -1,114 +1,82 @@
 <!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Casino Slab | Type Specimen | Andrew Millen</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Casino Slab | Type Specimen | Andrew Millen</title>
+    <meta name="favicon" content="img/favicon.png" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="img/chips.svg" alt="" id="image-chips" />
+        <img src="img/cards.svg" alt="" id="image-cards" />
+      </div>
+      <h1>Casino</h1>
+      <p>Display Slab</p>
+    </header>
 
-        <header>
-          <img src="img/suits.svg" alt="suits">
-          <h1 id="variable-size"><span contenteditable="true" spellcheck="false">Casino Slab</span></h1>
+    <main>
 
-          <div class="slider cf">
-            <span class="label label-small">Bet Small</span>
-            <input type="range" min="50" max="200">
-            <span class="label label-big">Bet Big</span>
+      <section id="specimen-1">
+          <div>Heart</div>
+          <div>Diamond</div>
+          <div>Club</div>
+          <div>Spade</div>
+      </section>
+
+      <img src="img/club.svg" alt="" class="image-suit" />
+
+      <section id="specimen-2">
+          <div>Four Queens</div>
+          <div>Straight to the Jack</div>
+          <div>Ace High</div>
+          <div>Kings Over Twos</div>
+      </section>
+
+      <img src="img/diamond.svg" alt="" class="image-suit" />
+
+      <section id="specimen-3">
+          <div>
+            ABCDEFGHIJKLM<br />
+            NOPQRSTUVWXYZ<br />
+            0123456789<br />
+            ()#$<>/=?![]
           </div>
+      </section>
 
-          <a href="font/casino.ttf" class="download">Download <i class="fas fa-download"></i> <span>TTF</span></a>
-        </header>
+      <img src="img/heart.svg" alt="" class="image-suit" />
 
-        <main>
+      <section id="specimen-4">
+          <div>&</div>
+      </section>
 
-          <section class="cf section--characters">
-            <div class="alphabet">
-              <span contenteditable="true" spellcheck="false">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
-            </div>
-          </section>
+      <img src="img/spade.svg" alt="" class="image-suit" />
 
-          <section class="cf section--words">
-            <div class="words">
-              <div class="words__wrapper" contenteditable="true" spellcheck="false">
-                <span class="word word-1">Tangle</span>
-                <span class="word word-2">Quick</span>
-                <span class="word word-3">Joyfully</span>
-                <span class="word word-4">Zebra</span>
-              </div>
-            </div>
-            <div class="amp">
-              <span class="ampersand" contenteditable="true" spellcheck="false">&amp;</span>
-            </div>
-          </section>
+      <section id="download">
+         <div>
+          <a href="font/casino.ttf">
+            <span>Download</span>
+          </a>
+          <div>
+            <span>(on the house)</span>
+          </div>
+        </div>
+      </section>
+    </main>
 
-          <section class="cf section--emoticon">
-              <div class="emoticon" contenteditable="true" spellcheck="false">
-                  <span>(-_-')</span>
-                  <div class="bubble">!#?$<</div>
-              </div>
-          </section>
-
-          <section class="cf section--numerals">
-            <div class="equation">
-              <div class="equation__wrapper">
-                <div class="cf">
-                  <input type="text" id="num1" placeholder="41" value="41" onkeyup="add_two_number();">
-                </div>
-                <div class="cf plus">
-                <input type="text" id="num2" placeholder="57" value="57" onkeyup="add_two_number();">
-                </div>
-                <div id="solution">98</div>
-              </div>
-            </div>
-            <div class="numerals">
-              <span contenteditable="true" spellcheck="false">
-              123<br>
-              456<br>
-              789<br>
-              </span>
-            </div>
-          </section>
-
-          <section class="cf section--quote">
-            <p contenteditable="true" spellcheck="false" class="quote">"Victory is a fleeting thing in the gambling business. Today's winners are tomorrow's blinking toads, dumb beasts with no hope."</p>
-            <span class="cite">– Hunter S. Thompson</span>
-          </section>
-
-        </main>
-
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/jquery.fittext.js"></script>
-
-        <script type="text/javascript">
-          function add_two_number() {
-            var answer=parseInt($("#num1").val()) + parseInt($("#num2").val())
-            $("#solution").html(""+answer+"");
-           }
-        </script>
-
-        <script>
-          jQuery('.slider input').on('input', function () {
-              var v = jQuery(this).val();
-              jQuery('#variable-size').css('font-size', v + 'px')
-          });
-        </script>
-
-        <script>
-          jQuery("h1").fitText();
-          jQuery(".alphabet").fitText(2);
-          jQuery(".quote").fitText(2);
-        </script>
-
-    </body>
+    <footer>
+      <a href="https://andrewmillen.com" target="_blank" rel="noopener noreferrer">
+        <img src="img/am-chip.svg" alt="" id="image-am-chip" />
+      </a>
+      <div>
+        Designed by Andrew Millen<br />
+        for Simple Focus
+      </div>
+    </footer>
+  </body>
 </html>
