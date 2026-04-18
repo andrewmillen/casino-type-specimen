@@ -21,7 +21,7 @@
   --vertical-spacing: 14vmax;
 
   /* responsive font size variables */
-  --text-min: 1rem;
+  --text-min: 0.8rem;
   --text-pref: 5vw;
   --text-max: 3rem;
   --text-scale: 1;
